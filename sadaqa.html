@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صدقة جارية - عبدالرحمن محمد عبدالوهاب</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #e0f2fe; /* Light blue background */
+        }
+        .container {
+            max-width: 800px;
+        }
+        .section-title {
+            color: #0c4a6e;
+            font-weight: 700;
+        }
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #dbeafe;
+        }
+        .button {
+            transition: all 0.2s;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.1), 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+        }
+        .tasbeeh-btn {
+            background-color: #3b82f6;
+            color: #ffffff;
+            width: 100px;
+            height: 100px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .tasbeeh-btn:hover {
+            background-color: #2563eb;
+        }
+        @media (min-width: 640px) {
+            .tasbeeh-btn {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .tasbeeh-btn {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8 flex flex-col items-center">
+
+    <div class="container mx-auto space-y-8 text-center">
+        <!-- Main Title -->
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 my-4">
+            صدقة جارية على روح المرحوم
+            <br>
+            <span class="text-blue-700">عبدالرحمن محمد عبدالوهاب</span>
+        </h1>
+        
+        <!-- Duas Section -->
+        <div class="card p-6 sm:p-8 rounded-xl shadow-lg">
+            <h2 class="section-title text-2xl sm:text-3xl mb-4">أدعية للمتوفي</h2>
+            <div class="space-y-4 text-lg text-gray-700">
+                <p>اللَّهُمَّ، اغْفِرْ له وَارْحَمْهُ، وَاعْفُ عنْه وَعَافِهِ، وَأَكْرِمْ نُزُلَهُ، وَوَسِّعْ مُدْخَلَهُ، وَاغْسِلْهُ بمَاءٍ وَثَلْجٍ وَبَرَدٍ، وَنَقِّهِ مِنَ الخَطَايَا كما يُنَقَّى الثَّوْبُ الأبْيَضُ مِنَ الدَّنَسِ، وَأَبْدِلْهُ دَارًا خَيْرًا مِن دَارِهِ، وَأَهْلًا خَيْرًا مِن أَهْلِهِ، وَزَوْجًا خَيْرًا مِن زَوْجِهِ، وَقِهِ فِتْنَةَ القَبْرِ وَعَذَابَ النَّارِ</p>
+            </div>
+        </div>
+
+        <!-- Masbaha Section -->
+        <div class="card p-6 sm:p-8 rounded-xl shadow-lg">
+            <h2 class="section-title text-2xl sm:text-3xl mb-4">مسبحة إلكترونية</h2>
+            <p class="text-gray-600 mb-6">
+                ساهم في الصدقة الجارية. كل نقرة تعد صدقة بإذن الله.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-center justify-items-center">
+                <!-- Istighfar Card -->
+                <div class="flex flex-col items-center space-y-4">
+                    <button id="istighfar-btn" class="tasbeeh-btn rounded-full font-bold text-lg button">استغفر الله</button>
+                    <p class="text-gray-800 text-3xl font-bold" id="istighfar-count">0</p>
+                </div>
+                <!-- Takbir Card -->
+                <div class="flex flex-col items-center space-y-4">
+                    <button id="takbir-btn" class="tasbeeh-btn rounded-full font-bold text-lg button">الله أكبر</button>
+                    <p class="text-gray-800 text-3xl font-bold" id="takbir-count">0</p>
+                </div>
+                <!-- Tasbeeh Card -->
+                <div class="flex flex-col items-center space-y-4">
+                    <button id="tasbeeh-btn" class="tasbeeh-btn rounded-full font-bold text-lg button">سبحان الله</button>
+                    <p class="text-gray-800 text-3xl font-bold" id="tasbeeh-count">0</p>
+                </div>
+                <!-- La ilaha illa Allah Card -->
+                <div class="flex flex-col items-center space-y-4">
+                    <button id="la-ilaha-illa-allah-btn" class="tasbeeh-btn rounded-full font-bold text-lg button">لا إله إلا الله</button>
+                    <p class="text-gray-800 text-3xl font-bold" id="la-ilaha-illa-allah-count">0</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Surahs Section -->
+        <div class="card p-6 sm:p-8 rounded-xl shadow-lg text-lg text-gray-700">
+            <h2 class="section-title text-2xl sm:text-3xl mb-4">قراءة على روحه</h2>
+            <p class="mb-4">اقرأ هذه السور إهداءً لروح المرحوم عبدالرحمن محمد عبدالوهاب. نسأل الله أن يتقبلها ويجعلها في ميزان حسناته.</p>
+
+            <div class="space-y-6 text-2xl">
+                <!-- Al-Fatihah -->
+                <div class="p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">سورة الفاتحة</h3>
+                    <p>بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ (1) ٱلۡحَمۡدُ لِلَّهِ رَبِّ ٱلۡعَٰلَمِينَ (2) ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ (3) مَٰلِكِ يَوۡمِ ٱلدِّينِ (4) إِيَّاكَ نَعۡبُدُ وَإِيَّاكَ نَسۡتَعِينُ (5) ٱهۡدِنَا ٱلصِّرَٰطَ ٱلۡمُسۡتَقِيمَ (6) صِرَٰطَ ٱلَّذِينَ أَنۡعَمۡتَ عَلَيۡهِمۡ غَيۡرِ ٱلۡمَغۡضُوبِ عَلَيۡهِمۡ وَلَا ٱلضَّآلِّينَ (7)</p>
+                </div>
+
+                <!-- Al-Ikhlas -->
+                <div class="p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">سورة الإخلاص</h3>
+                    <p>قُلۡ هُوَ ٱللَّهُ أَحَدٌ (1) ٱللَّهُ ٱلصَّمَدُ (2) لَمۡ يَلِدۡ وَلَمۡ يُولَدۡ (3) وَلَمۡ يَكُن لَّهُۥ كُفُوًا أَحَدُۢ (4)</p>
+                </div>
+                
+                <!-- Al-Falaq -->
+                <div class="p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">سورة الفلق</h3>
+                    <p>قُلۡ أَعُوذُ بِرَبِّ ٱلۡفَلَقِ (1) مِن شَرِّ مَا خَلَقَ (2) وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ (3) وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِي ٱلۡعُقَدِ (4) وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ (5)</p>
+                </div>
+
+                <!-- An-Nas -->
+                <div class="p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">سورة الناس</h3>
+                    <p>قُلۡ أَعُوذُ بِرَبِّ ٱلنَّاسِ (1) مَلِكِ ٱلنَّاسِ (2) إِلَٰهِ ٱلنَّاسِ (3) مِن شَرِّ ٱلۡوَسۡوَاسِ ٱلۡخَنَّاسِ (4) ٱلَّذِي يُوَسۡوِسُ فِي صُدُورِ ٱلنَّاسِ (5) مِنَ ٱلۡجِنَّةِ وَٱلنَّاسِ (6)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thanks Message -->
+        <p class="text-xl sm:text-2xl font-bold text-gray-700 mt-8 mb-4">شكر الله سعيكم وجزاكم الله خيراً</p>
+
+        <p class="text-sm text-gray-400 mt-8" id="user-id-display">User ID:</p>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInWithCustomToken, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, onSnapshot, runTransaction } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        
+        // Firebase configuration and initialization
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+
+        if (Object.keys(firebaseConfig).length > 0) {
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
+            const auth = getAuth(app);
+
+            // Function to update count in Firestore using a transaction
+            async function incrementCount(type) {
+                const docRef = doc(db, `artifacts/${appId}/public/data/tasbeeh-counts/${type}`);
+                if (!docRef) return;
+
+                try {
+                    await runTransaction(db, async (transaction) => {
+                        const docSnapshot = await transaction.get(docRef);
+                        if (!docSnapshot.exists()) {
+                            transaction.set(docRef, { count: 1 });
+                        } else {
+                            const newCount = (docSnapshot.data().count || 0) + 1;
+                            transaction.update(docRef, { count: newCount });
+                        }
+                    });
+                } catch (e) {
+                    console.error("Transaction failed: ", e);
+                }
+            }
+
+            // Function to listen to real-time updates and update UI
+            function setupRealtimeListener() {
+                onSnapshot(doc(db, `artifacts/${appId}/public/data/tasbeeh-counts/istighfar`), (doc) => {
+                    document.getElementById('istighfar-count').innerText = doc.data()?.count || 0;
+                });
+                onSnapshot(doc(db, `artifacts/${appId}/public/data/tasbeeh-counts/takbir`), (doc) => {
+                    document.getElementById('takbir-count').innerText = doc.data()?.count || 0;
+                });
+                onSnapshot(doc(db, `artifacts/${appId}/public/data/tasbeeh-counts/tasbeeh`), (doc) => {
+                    document.getElementById('tasbeeh-count').innerText = doc.data()?.count || 0;
+                });
+                onSnapshot(doc(db, `artifacts/${appId}/public/data/tasbeeh-counts/la_ilaha_illa_allah`), (doc) => {
+                    document.getElementById('la-ilaha-illa-allah-count').innerText = doc.data()?.count || 0;
+                });
+            }
+
+            // Authentication and app startup
+            onAuthStateChanged(auth, async (user) => {
+                if (user) {
+                    // User is signed in.
+                    const userId = user.uid;
+                    document.getElementById('user-id-display').innerText = `User ID: ${userId}`;
+                    setupRealtimeListener();
+
+                    // Set up event listeners for the buttons only after authentication is complete
+                    document.getElementById('istighfar-btn').addEventListener('click', () => incrementCount('istighfar'));
+                    document.getElementById('takbir-btn').addEventListener('click', () => incrementCount('takbir'));
+                    document.getElementById('tasbeeh-btn').addEventListener('click', () => incrementCount('tasbeeh'));
+                    document.getElementById('la-ilaha-illa-allah-btn').addEventListener('click', () => incrementCount('la_ilaha_illa_allah'));
+
+                } else {
+                    // No user is signed in, so sign in
+                    try {
+                        if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                            await signInWithCustomToken(auth, __initial_auth_token);
+                        } else {
+                            await signInAnonymously(auth);
+                        }
+                    } catch (error) {
+                        console.error("Authentication failed:", error);
+                        document.getElementById('user-id-display').innerText = `Authentication Error: ${error.message}`;
+                    }
+                }
+            });
+
+        } else {
+            console.error("Firebase config is missing. Please ensure it's provided.");
+        }
+    </script>
+</body>
+</html>
